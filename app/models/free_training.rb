@@ -1,0 +1,2 @@
+class FreeTraining < ApplicationRecord
+end

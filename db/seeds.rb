@@ -1,7 +1,15 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+require 'json'
+
+data_file = File.read("./lib/json_file/exercise.json")
+data_hash = JSON.parse(data_file)
+
+data_hash.each do |exercise_object|
+
+    FreeTraining.create!( name: exercise_object["name"],
+                          bodyPart: exercise_object["bodyPart"], 
+                          equipment: exercise_object["equipment"], 
+                          gifUrl: exercise_object["gifUrl"], 
+                          id: exercise_object["id"],
+                          target: exercise_object["target"])
+
+end
