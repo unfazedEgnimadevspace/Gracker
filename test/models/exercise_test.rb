@@ -1,6 +1,6 @@
 require "test_helper"
 
-class FreeTrainingTest < ActiveSupport::TestCase
+class ExerciseTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

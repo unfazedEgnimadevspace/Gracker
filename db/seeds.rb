@@ -1,15 +1,20 @@
-require 'json'
+puts " === Database seeding starting === "
 
-data_file = File.read("./lib/json_file/exercise.json")
-data_hash = JSON.parse(data_file)
+require 'json'
+data_hash = JSON.load_file("./db/exercises.json")
+puts "Creating exercises"
 
 data_hash.each do |exercise_object|
-
-    FreeTraining.create!( name: exercise_object["name"],
-                          bodyPart: exercise_object["bodyPart"], 
-                          equipment: exercise_object["equipment"], 
-                          gifUrl: exercise_object["gifUrl"], 
-                          id: exercise_object["id"],
-                          target: exercise_object["target"])
-
+    print "."
+    Exercise.create!( 
+        name: exercise_object["name"],
+        body_part: exercise_object["bodyPart"], 
+        equipment: exercise_object["equipment"], 
+        gif_url: exercise_object["gifUrl"], 
+        id: exercise_object["id"],
+        target: exercise_object["target"]
+    )
 end
+
+
+puts " === Database seeding ending === "
