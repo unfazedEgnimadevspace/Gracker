@@ -1,5 +1,4 @@
-class MainController < ApplicationController
-  skip_before_action :authenticate_user!
+class Website::PagesController < ApplicationController
   
   def home
   end
