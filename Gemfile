@@ -80,3 +80,5 @@ gem "devise", "~> 4.9"
 gem "hirb", "~> 0.7.3"
 gem "rubocop", require: false
 gem "will_paginate", "~> 3.3"
+
+gem "byebug", "~> 11.1"
