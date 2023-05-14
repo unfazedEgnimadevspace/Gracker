@@ -1,0 +1,29 @@
+<div class=" mx-6 pt-3">
+  <h1 class="text-4xl font-bold text-center text-indigo-400 mb-8 mt-4">Freestyle Training</h1>
+
+  <h3 class="mb-8 text-lg font-medium text-gray-500 dark:text-white mt-4 text-center">What part of the body do you want to workout on today</h3>
+
+  <%= form_tag app_freestyle_index_url, method: :get do %>
+    <% options = [['Back', 'back'], ['Cardio', 'cardio'], ['Chest', 'chest'],['Lower arms', 'lower arms'],['Lower legs', 'lower legs'],['Neck', 'neck'],['Shoulders', 'shoulders'],['Upper arms', 'upper arms'],['Upper legs', 'upper legs'], ['Waist', 'waist']] %>
+  
+      <ul class="grid w-full gap-6 md:grid-cols-2">
+        <% options.each do |option| %>
+          <li>
+            <div class = "flex  gap-2 items-center justify-between w-full p-3 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:border-blue-600 peer-checked:text-blue-600 "> 
+              <%= radio_button_tag :filter_by, option[1], class: "hidden peer", required: true  %>
+              <%= label_tag "filter_by_#{option[1]}", class: "inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white peer-checked:border-blue-600 peer-checked:text-blue-600 cursor-pointer " do  %>
+                <div class="block">
+                      <div class="w-full text-lg font-semibold"><%= option[0]%></div>
+                  </div>
+              <% end %>
+            </div>
+          </li>
+        <%end%>
+      </ul>      
+    
+    <%= submit_tag 'Confirm', class: "text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 mt-12 " %>
+  <% end %>
+</div>
+
+
+

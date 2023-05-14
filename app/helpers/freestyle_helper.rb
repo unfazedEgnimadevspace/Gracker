@@ -1,0 +1,2 @@
+module FreestyleHelper
+end
