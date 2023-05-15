@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   namespace :app do 
     resources :freestyle 
+    resources :training
   end
   devise_for :users
   root 'website/pages#home'

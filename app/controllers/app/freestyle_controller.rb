@@ -20,7 +20,7 @@ class App::FreestyleController < App::BaseController
   def apply_filter(filter_option)
     case filter_option
     when *FILTER_OPTIONS
-      @freestyle_exercises = Exercise.where(body_part: filter_option)
+      @freestyle_exercises = Exercise.where(body_part: filter_option).paginate(page: params[:page], per_page: 12)
     end
   end
 end
