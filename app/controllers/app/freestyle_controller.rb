@@ -6,6 +6,7 @@ class App::FreestyleController < App::BaseController
   # renders all the exercises with that particular body part
   def index
    apply_filter(params[:filter_by]) if params[:filter_by].present?
+   apply_search(params[:search])  if params[:search].present?
   end
 
   # Renders the filter page where users can choose what body part they want to workout on
@@ -23,4 +24,8 @@ class App::FreestyleController < App::BaseController
       @freestyle_exercises = Exercise.where(body_part: filter_option).paginate(page: params[:page], per_page: 12)
     end
   end
+  def apply_search(search_option)
+    @freestyle_exercises = Exercise.where("name LIKE ?", "%#{search_option}%").paginate(page: params[:page], per_page: 12)
+  end
+  
 end
