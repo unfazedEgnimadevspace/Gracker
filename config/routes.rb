@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'contacts/create'
-  get 'contacts/new'
   devise_for :users
   root 'website/pages#home'
   get '/about', to: "website/pages#about"
