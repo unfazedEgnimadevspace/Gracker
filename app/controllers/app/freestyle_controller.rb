@@ -5,7 +5,7 @@ class App::FreestyleController < App::BaseController
 
   # renders all the exercises with that particular body part
   def index
-   apply_filter(params[:filter_by]) if params[:filter_by].present?
+   apply_filter(params[:filter_by])
   end
 
   # Renders the filter page where users can choose what body part they want to workout on
