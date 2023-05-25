@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
+
 ActiveRecord::Schema[7.0].define(version: 2023_05_14_185221) do
+
   create_table "contacts", force: :cascade do |t|
     t.string "email"
     t.string "subject"
@@ -27,6 +30,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_14_185221) do
     t.string "target"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["body_part"], name: "index_exercises_on_body_part"
   end
 
   create_table "trainings", force: :cascade do |t|
