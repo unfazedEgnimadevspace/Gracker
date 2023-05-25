@@ -1,0 +1,23 @@
+<% provide(:title, 'Contact')%>
+<section class="bg-white dark:bg-gray-900">
+  <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+      <h2 class="mb-4 text-4xl tracking-tight font-medium text-center text-gray-500 dark:text-white">Contact Us</h2>
+      <p class="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">Got a technical issue? Want to send feedback about a beta feature? Need details about our various gym plans? Let us know.</p>
+      <%= form_with(model: @contact, local: true, class: 'space-y-8', data: {turbo: false}) do |f| %>
+        <%= render "devise/shared/error_messages", resource: @contact %>
+        <div>
+          <%= f.label :email, class: 'block mb-2 text-sm font-medium text-gray-900'%>
+          <%= f.email_field :email, class: "shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5", placeholder: "youremail@example.com"%>
+        </div>
+        <div>
+          <%= f.label :subject, class: 'block mb-2 text-sm font-medium text-gray-900 '%>
+          <%= f.text_field :subject, class: 'block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500', placeholder: "Let us know how we can help you"%>
+        </div>
+        <div>
+          <%= f.label :message, class: 'block mb-2 text-sm font-medium text-gray-900'%>
+          <%= f.text_area :message, class: "block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 h-36"%>
+        </div>
+         <%= f.submit "Send a message", class: "text-white bg-indigo-600 hover:bg-indigo-700 focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800 cursor-pointer"%>
+      <% end %>
+  </div>
+</section>
