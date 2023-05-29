@@ -15,8 +15,7 @@ jobs:
           bundler-cache: true
 
       - name: Run linters
-        run: |
-          bin/rubocop --parallel
+        run: bin/rubocop --parallel
 
   tests:
     name: Tests
@@ -33,16 +32,13 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v2
         with:
-          node-version: 16
-          cache: yarn
+          node-version: 18
 
       - name: Install packages
-        run: |
-          yarn install --pure-lockfile
+        run: npm install
 
       - name: Setup test database
-        run: |
-          bin/rails db:setup db:test:prepare
+        run: bin/rails db:setup db:test:prepare
 
       - name: Run tests
         run: bin/rails test
