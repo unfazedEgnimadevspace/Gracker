@@ -8,8 +8,8 @@
   
       <ul class="grid w-full gap-6 md:grid-cols-2">
         <% options.each do |option| %>
-          <li>
-            <div class = "flex  gap-2 items-center justify-between w-full p-3 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:border-blue-600 peer-checked:text-blue-600 "> 
+          <li class="">
+            <div class = "flex  gap-2 items-center justify-between w-full p-3 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:border-blue-600 peer-checked:text-blue-600 hover:border hover:border-indigo-400 duration-300"> 
               <%= radio_button_tag :filter_by, option[1], class: "hidden peer", required: true  %>
               <%= label_tag "filter_by_#{option[1]}", class: "inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white peer-checked:border-blue-600 peer-checked:text-blue-600 cursor-pointer " do  %>
                 <div class="block">
