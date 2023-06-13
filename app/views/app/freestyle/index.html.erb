@@ -15,7 +15,7 @@
   <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
     <% @freestyle_exercises.each do |freestyle_exercise|%>
       <li class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">  
-        <%= image_tag( freestyle_exercise.gif_url, alt: freestyle_exercise.name, class: "rounded-t-lg") %>
+        <%= image_tag(exercise_gif_url(freestyle_exercise), alt: freestyle_exercise.name, class: "rounded-t-lg") %>
         <div class="p-5">
           <h3 class="mb-2 text-1xl font-medium tracking-tight text-gray-700 dark:text-white"><%= freestyle_exercise.name.capitalize %></h3>
           <div class="flex align-center justify-between mb-8">
