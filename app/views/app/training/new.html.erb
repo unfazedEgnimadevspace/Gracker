@@ -1,6 +1,6 @@
 
 <section class="flex flex-col items-center gap-4 bg-white   md:flex-row mx-3 "> 
-    <%= image_tag(@freestyle_exercise.gif_url, class: "object-cover w-full rounded-t-lg md:h-full md:w-full md:rounded-none md:rounded-l-lg")%>
+    <%= image_tag(exercise_gif_url(@freestyle_exercise) , class: "object-cover w-full rounded-t-lg md:h-full md:w-full md:rounded-none md:rounded-l-lg")%>
     <%= form_with(model: @training, url:  app_training_index_url, local: true, class: "w-full max-w-[28rem] md:max-w-lg mx-12", data: {turbo: false}) do |f|%>
       <div class="flex flex-wrap -mx-3 mb-6">
         <div class="w-full px-3">
