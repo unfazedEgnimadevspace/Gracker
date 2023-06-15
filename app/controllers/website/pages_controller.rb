@@ -12,7 +12,7 @@ class Website::PagesController < ApplicationController
     private 
 
     def valid_page?
-      File.exist?(Pathname.new(Rails.root + "app/views/website/pages/#{params[:page]}.html.erb"))
+      Rails.root.join('app', 'views', 'website', 'pages', "#{params[:page]}.html.erb").exist?
     end
   
 end
