@@ -16,14 +16,11 @@ class App::TrainingController < App::BaseController
     end
   end
   
-
   def show
 
   end
 
-
   private 
-  
   
   def training_params
     params.require(:training).permit(:weight, :number_of_sets, :number_of_reps, :exercise_id)

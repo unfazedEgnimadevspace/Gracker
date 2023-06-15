@@ -1,19 +1,16 @@
 Rails.application.routes.draw do
-  root 'website/pages#show', page: "home"
-  devise_for :users
-
-  # Namespace for pages that do not require authentication
-  namespace :website do 
-    get '/pages/:page', to: "pages#show"
-    resources :contacts
-  end
-  # Namespace for pages that require authentication
   namespace :app do 
-    root 'main#home'
-    resources :freestyle, except: %i[filter_page]
+    resources :freestyle 
     resources :training
-    get '/freetraining', to: "freestyle#filter_page"
   end
-  
-end
+  devise_for :users
+  root 'website/pages#home'
+  get '/about', to: "website/pages#about"
+  get '/pricing', to: "website/pages#pricing"
+  get '/contact', to: "website/pages#contact"
+  get '/freetraining', to: "app/freestyle#filter_page"
+  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
+  # Defines the root path route ("/")
+  # root "articles#index"
+end
