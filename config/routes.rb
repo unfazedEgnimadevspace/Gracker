@@ -9,9 +9,6 @@ Rails.application.routes.draw do
   get '/pricing', to: "website/pages#pricing"
   get '/contact', to: "website/pages#contact"
   get '/freetraining', to: "app/freestyle#filter_page"
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  get '*path', to: 'errors#not_found', via: :all
 end
 
