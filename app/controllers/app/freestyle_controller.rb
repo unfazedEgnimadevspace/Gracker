@@ -4,9 +4,13 @@ class App::FreestyleController < App::BaseController
   FILTER_OPTIONS = Exercise.distinct.pluck(:body_part).freeze
 
   # renders all the exercises with that particular body part
+  # also renders all the exercises that match a particular search param
   def index
    apply_filter(params[:filter_by]) 
-   apply_search(params[:search])  
+
+   if params[:search] != nil 
+    apply_search(params[:search])  
+   end
   end
 
   # Renders the filter page where users can choose what body part they want to workout on
