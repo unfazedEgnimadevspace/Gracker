@@ -10,7 +10,7 @@ class App::TrainingController < App::BaseController
     @training = exercise.trainings.build(training_params)
     if @training.save 
       flash[:notice] = "Sucessfully created training"
-      redirect_to root_path
+      redirect_to app_root_url
     else  
       render 'training/new'
     end
