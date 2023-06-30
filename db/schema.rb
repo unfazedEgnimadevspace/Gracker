@@ -28,6 +28,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_25_165005) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["body_part"], name: "index_exercises_on_body_part"
+    t.index ["name"], name: "index_exercises_on_name"
   end
 
   create_table "trainings", force: :cascade do |t|
@@ -39,7 +40,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_25_165005) do
     t.datetime "updated_at", null: false
     t.integer "exercise_id"
   end
-  
 
   create_table "users", force: :cascade do |t|
     t.string "first_name", default: "", null: false
