@@ -13,10 +13,10 @@ class App::CaloriesController < ApplicationController
   end
 
   def create
-    calorie = current_user.calories.build(calorie_params)
-    if calorie.save
+    @calorie = current_user.calories.build(calorie_params)
+    if @calorie.save
       flash[:notice] = "New calorie recorded sucessfully"
-      redirect_to calorie
+      redirect_to app_calorie_path(@calorie)
     else  
       render :new
     end
@@ -28,7 +28,7 @@ class App::CaloriesController < ApplicationController
   def update 
     if @calorie.update(calorie_params)
       flash[:notice] = "Record sucessfully updated"
-      redirect_to calorie
+      redirect_to app_calorie_path(@calorie)
     else  
       render :edit
     end
@@ -46,7 +46,7 @@ class App::CaloriesController < ApplicationController
 
   def check_current_user
     if current_user == nil  
-      flash[:alert] = "You have to logged in first"
+      flash[:alert] = "You have to be logged in first"
       redirect_to new_user_session_url
     end 
   end
