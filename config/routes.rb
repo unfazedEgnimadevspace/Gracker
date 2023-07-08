@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     root 'main#home'
     resources :freestyle, except: %i[filter_page]
     resources :training
+    resources :calories
     get '/freetraining', to: "freestyle#filter_page"
   end
   
