@@ -1,4 +1,9 @@
-<section class="mx-6 md:mx-8 lg:mx-12 pt-3 mb-7"> 
+<section class="mx-6 md:mx-8 lg:mx-12 pt-3 mb-7">
+  <%= will_paginate @calories  %>
+  <div class="flex align-center justify-between mt-5">
+    <h3 class="text-2xl font-medium text-center text-indigo-400 mb-8 mt-4">Your recorded calories</h3>
+    <%= link_to  "New calorie", new_app_calorie_path, class: "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 mr-2 mb-2 h-[50%]"%>
+  </div>
   <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
     <% @calories.each do |calorie|%>
       <li class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 px-3 py-3">  
@@ -22,7 +27,7 @@
                 </div>
                 <div class="flex justify-between align-center mt-7">
                   <%= link_to  "Show", app_calorie_path(calorie), class: "text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-4 py-2 mr-2 mb-2" %>
-                  <%= link_to  "Delete", app_calorie_path(calorie), data:{"turbo_method": :delete, turbo_confirm: "Are you sure"}, class: "focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-4 py-2 mr-2 mb-2" %>
+                  <%= link_to  "Delete", app_calorie_path(calorie), data:{"turbo_method": :delete, turbo_confirm: "Are you sure"}, class: "text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-red-800 focus:ring-4 hover:text-white font-medium rounded-lg text-sm px-4 py-2 mr-2 mb-2 duration-100" %>
                 </div>
             </div>
           </div> 

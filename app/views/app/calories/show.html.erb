@@ -24,9 +24,9 @@
             <p class="text-center font-light text-base "><%=@calorie.notes%></p>
           </div>
           <div class="flex justify-between align-center mt-12">
-            <%=link_to "Back", app_calories_path, class: "text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-4 py-2 mr-2 mb-2"%>
-            <%= link_to  "Update", edit_app_calorie_path(@calorie), class: "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 mr-2 mb-2 " %>
-            <%= link_to  "Delete", app_calorie_path(@calorie), data:{"turbo_method": :delete, turbo_confirm: "Are you sure"}, class: "focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-4 py-2 mr-2 mb-2" %>
+            <%= link_to "Back", app_calories_path, class: "text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-4 py-2 mr-2 mb-2"%>
+            <%= link_to  "Update", edit_app_calorie_path(@calorie), class: "text-gray-900 bg-white border border-gray-300 hover:border-blue-300 focus:outline-none hover:bg-blue-800 hover:text-white focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-4 py-2 mr-2 mb-2 duration-100" %>
+            <%= link_to  "Delete", app_calorie_path(@calorie), data:{"turbo_method": :delete, turbo_confirm: "Are you sure"}, class: "text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-red-800 focus:ring-4 hover:text-white font-medium rounded-lg text-sm px-4 py-2 mr-2 mb-2 duration-100" %>
           </div>
       </div>
     </div> 
