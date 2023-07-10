@@ -1,4 +1,32 @@
-<div>
-  <h1 class="font-bold text-4xl">App::Calories#index</h1>
-  <p>Find me in app/views/app/calories/index.html.erb</p>
-</div>
+<section class="mx-6 md:mx-8 lg:mx-12 pt-3 mb-7"> 
+  <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
+    <% @calories.each do |calorie|%>
+      <li class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 px-3 py-3">  
+          <div class="rounded-xl">
+            <div class="flex flex-col p-4 rounded-xl bg-white">
+                <div class="flex align-center justify-between mt-2 p-1">
+                  <span class="font-light text-medium">Meal: </span>
+                  <span class="font-light text-sm"><%= calorie.food_name %></span>
+                </div>
+                <div class="flex align-center justify-between mt-2 p-1">
+                  <span class="font-light text-sm">Calories:</span>
+                  <span class="font-light text-sm"><%= calorie.calories %></span>
+                </div>
+                <div class="flex align-center justify-between mt-2 p-1">
+                  <span class="font-light text-base">Meal type:</span>
+                  <span class="font-light text-sm"><%= calorie.meal_type %></span>
+                </div>
+                <div class="flex align-center justify-between mt-2 p-1">
+                  <span class="font-light text-base">Consumed at:</span>
+                  <span class="font-light text-sm"><%= calorie.consumed_at.to_s.truncate(14) %></span>
+                </div>
+                <div class="flex justify-between align-center mt-7">
+                  <%= link_to  "Show", app_calorie_path(calorie), class: "text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-4 py-2 mr-2 mb-2" %>
+                  <%= link_to  "Delete", app_calorie_path(calorie), data:{"turbo_method": :delete, turbo_confirm: "Are you sure"}, class: "focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-4 py-2 mr-2 mb-2" %>
+                </div>
+            </div>
+          </div> 
+      </li>  
+    <% end %>
+  </ul>
+</section> 
