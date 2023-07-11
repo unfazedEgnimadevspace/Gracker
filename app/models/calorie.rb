@@ -1,2 +1,0 @@
-class Calorie < ApplicationRecord
-end

@@ -2,16 +2,16 @@
 
 one:
   user_id: 1
-  food_name: MyString
+  name: MyString
   meal_type: MyString
-  consumed_at: 2023-07-08 06:31:11
+  consumed_at: 2023-07-11 14:49:06
   notes: MyText
   calories: 1
 
 two:
   user_id: 1
-  food_name: MyString
+  name: MyString
   meal_type: MyString
-  consumed_at: 2023-07-08 06:31:11
+  consumed_at: 2023-07-11 14:49:06
   notes: MyText
   calories: 1
