@@ -1,42 +1,4 @@
-<% provide(:title, "Meals") %>
-<% if @foods.empty? %>
-  <%= render 'no_records'%>
-<% else %>  
-  <section class="mx-6 md:mx-8 lg:mx-12 pt-3 mb-7">
-    <%= will_paginate @foods  %>
-    <div class="flex align-center justify-between mt-5">
-      <h3 class="text-2xl font-medium text-center text-indigo-400 mb-8 md:mt-4">Meals</h3>
-      <%= link_to  "New", new_app_food_path, class: "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 mr-2 mb-2 h-[50%]"%>
-    </div>
-    <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
-      <% @foods.each do |food|%>
-        <li class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 px-3 py-3">  
-            <div class="rounded-xl">
-              <div class="flex flex-col p-4 rounded-xl bg-white">
-                  <div class="flex align-center justify-between mt-2 p-1">
-                    <span class="font-light text-medium">Meal: </span>
-                    <span class="font-light text-sm"><%= food.name %></span>
-                  </div>
-                  <div class="flex align-center justify-between mt-2 p-1">
-                    <span class="font-light text-sm">Calories:</span>
-                    <span class="font-light text-sm"><%= food.calories %></span>
-                  </div>
-                  <div class="flex align-center justify-between mt-2 p-1">
-                    <span class="font-light text-base">Meal type:</span>
-                    <span class="font-light text-sm"><%= food.meal_type %></span>
-                  </div>
-                  <div class="flex align-center justify-between mt-2 p-1">
-                    <span class="font-light text-base">Consumed at:</span>
-                    <span class="font-light text-sm"><%= food.consumed_at.to_s.truncate(14) %></span>
-                  </div>
-                  <div class="flex justify-between align-center mt-7">
-                    <%= link_to  "Show", app_food_path(food), class: "text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-4 py-2 mr-2 mb-2" %>
-                    <%= link_to  "Delete", app_food_path(food), data:{"turbo_method": :delete, turbo_confirm: "Are you sure"}, class: "text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-red-800 focus:ring-4 hover:text-white font-medium rounded-lg text-sm px-4 py-2 mr-2 mb-2 duration-100" %>
-                  </div>
-              </div>
-            </div> 
-        </li>  
-      <% end %>
-    </ul>
-  </section> 
-<% end %>  
+<div>
+  <h1 class="font-bold text-4xl">App::Foods#index</h1>
+  <p>Find me in app/views/app/foods/index.html.erb</p>
+</div>
