@@ -41,15 +41,7 @@ class App::FoodsController < ApplicationController
   end
 
 
-
   private 
-
-  def check_current_user
-    if current_user == nil  
-      flash[:alert] = "You have to be logged in first"
-      redirect_to new_user_session_url
-    end 
-  end
   
   def set_food 
     @food = current_user.foods.find(params[:id])
