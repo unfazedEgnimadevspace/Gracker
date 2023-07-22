@@ -8,9 +8,7 @@ class App::TrainingController < App::BaseController
   # Create a new training object for an exercise
   def create
     exercise = Exercise.find(params[:training][:exercise_id])
-    @training = exercise.trainings.build(training_params)
-    @training.exercise_time = Time.now
-    current_user.trainings << @training
+    @training = current_user.trainings.build(training_params)
     if @training.save 
       flash[:notice] = "Sucessfully created training"
       redirect_to app_root_url
@@ -26,7 +24,7 @@ class App::TrainingController < App::BaseController
   private 
   
   def training_params
-    params.require(:training).permit(:weight, :number_of_sets, :number_of_reps, :exercise_id)
+    params.require(:training).permit(:weight, :number_of_sets, :number_of_reps, :exercise_id).merge(exercise_time: Time.current)
   end
   
 end

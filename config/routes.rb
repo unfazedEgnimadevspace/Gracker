@@ -15,5 +15,5 @@ Rails.application.routes.draw do
     resources :training
     get '/freetraining', to: "freestyle#filter_page"
   end
-  
+  get '*path', to: 'errors#not_found', via: :all
 end
