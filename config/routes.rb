@@ -15,5 +15,4 @@ Rails.application.routes.draw do
     resources :training
     get '/freetraining', to: "freestyle#filter_page"
   end
-  
 end
