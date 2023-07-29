@@ -13,6 +13,11 @@ Rails.application.routes.draw do
     resources :freestyle, except: %i[filter_page]
     resources :foods
     resources :training
+    resources :planned_workouts
     get '/freetraining', to: "freestyle#filter_page"
+    get '/planworkouts', to: "planned_workouts#filter_page"
+    get '/plan_workouts_filter', to: "planned_workouts#filter_exercise"
+    get '/freestyle_training_filter', to: "freestyle#filter_exercise"
   end
+  get '*path', to: 'errors#not_found', via: :all
 end
