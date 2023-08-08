@@ -7,7 +7,6 @@ class App::TrainingController < App::BaseController
   end
   # Create a new training object for an exercise
   def create
-    exercise = Exercise.find(params[:training][:exercise_id])
     @training = current_user.trainings.build(training_params)
     if @training.save 
       flash[:notice] = "Sucessfully created training"
