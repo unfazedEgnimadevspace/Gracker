@@ -10,6 +10,7 @@ class App::PlannedWorkoutsController < App::BaseController
   end
   
   def new
+    @choosen_exercise = Exercise.find(params[:exercise])
     @planned_workout = current_user.planned_workouts.build
   end
 
