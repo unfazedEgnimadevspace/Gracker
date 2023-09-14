@@ -1,4 +1,5 @@
 class PlannedWorkout < ApplicationRecord
+    before_save :calculate_duration_in_minutes
     validates :date, presence: true
     validates :completed, inclusion: {in: [true, false]}
     validates :duration, numericality: {greater_than: 0, allow_nil: true}
@@ -6,4 +7,10 @@ class PlannedWorkout < ApplicationRecord
     validates :hours, numericality: {greater_than_or_equal_to: 0, less_than_or_equal_to: 12 }
     validates :minutes, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 59 }
     belongs_to :user
+
+    private
+
+    def calculate_duration_in_minutes
+        self.duration = (self.hours.to_i * 60) + self.minutes
+    end
 end
