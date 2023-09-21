@@ -6,6 +6,8 @@ class PlannedWorkout < ApplicationRecord
     validates :description, length: {maximum: 130, allow_nil: true}
     validates :hours, numericality: {greater_than_or_equal_to: 0, less_than_or_equal_to: 12 }
     validates :minutes, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 59 }
+    validates :sets, numericality: { only_integer: true, greater_than: 0, less_than_or_equal_to: 10}
+    validates :reps, numericality: { only_integer: true, greater_than: 0, less_than_or_equal_to: 100}
     belongs_to :user
 
     private

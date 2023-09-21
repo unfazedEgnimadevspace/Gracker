@@ -1,6 +1,7 @@
 class App::PlannedWorkoutsController < App::BaseController
   before_action :check_current_user
   before_action :set_planned_workout, only: [:edit, :update, :show, :destroy]
+  before_action :get_exercise_object, only: [:edit, :update, :show, :destroy]
 
   def index
     @planned_workouts = current_user.planned_workouts.paginate(page: params[:page], per_page: 10)
@@ -26,6 +27,7 @@ class App::PlannedWorkoutsController < App::BaseController
   
 
   def edit
+    
   end  
 
   def update
@@ -62,11 +64,15 @@ class App::PlannedWorkoutsController < App::BaseController
   private 
 
   def planned_workouts_params
-    params.require(:planned_workout).permit(:date, :completed, :user_id, :exercise_id, :description, :hours, :minutes)
+    params.require(:planned_workout).permit(:date, :completed, :user_id, :exercise_id, :description, :hours, :minutes, :sets, :reps)
   end
 
   def set_planned_workout
     @planned_workout = current_user.planned_workouts.find(params[:id])
+  end
+
+  def get_exercise_object
+    @exercise_object = Exercise.find(@planned_workout.exercise_id)
   end
   
 end

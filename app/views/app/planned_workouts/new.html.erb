@@ -23,11 +23,21 @@
             <%= f.select :minutes,(0..59).to_a%>
           </div>
       </div>
+      <div class="flex w-full justify-between align-center gap-3">
+          <div class="w-full">
+            <%= f.label :sets, class: 'block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'%>
+            <%= f.select :sets, (0..10).to_a%>
+          </div>
+          <div class="w-full">
+            <%= f.label :reps, class: 'block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'%>
+            <%= f.select :reps,(0..100).to_a%>
+          </div>
+      </div>
       <div>
           <%= f.label :description, class: 'block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'%>
           <%= f.text_area :description, class: "appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-36"%>
       </div>   
       <%= f.hidden_field :exercise_id, value: @choosen_exercise.id %>
-      <%= submit_tag 'Confirm', class: "text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 mt-12 " %>
+      <%= submit_tag 'Plan', class: "text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 mt-12 " %>
     <% end %>
 </section>
