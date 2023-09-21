@@ -60,3 +60,95 @@
     border: 1px solid #ddd;
     margin: 0 4px;
 }
+#planned_workout_minutes{
+    appearance: none;
+    display: block;
+    width: 100%;
+    background-color: rgb(229 231 235);
+    color: rgb(55 65 81);
+    border: 1px;
+    border-color: rgb(229 231 235);
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.25;
+    border-radius: 0.25rem;
+}
+#plannned_workout_minutes:focus{
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    background-color: #ffffff;
+    border-color: rgb(249 250 251);
+    border-radius: 0.25rem;
+}
+#planned_workout_hours{
+    appearance: none;
+    display: block;
+    width: 100%;
+    background-color: rgb(229 231 235);
+    color: rgb(55 65 81);
+    border: 1px;
+    border-color: rgb(229 231 235);
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.25;
+    border-radius: 0.25rem;
+}
+#plannned_workout_hours:focus{
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    background-color: #ffffff;
+    border-color: rgb(249 250 251);
+    border-radius: 0.25rem;
+}
+#planned_workout_sets{
+    appearance: none;
+    display: block;
+    width: 100%;
+    background-color: rgb(229 231 235);
+    color: rgb(55 65 81);
+    border: 1px;
+    border-color: rgb(229 231 235);
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.25;
+    border-radius: 0.25rem;
+}
+#planned_workout_reps{
+    appearance: none;
+    display: block;
+    width: 100%;
+    background-color: rgb(229 231 235);
+    color: rgb(55 65 81);
+    border: 1px;
+    border-color: rgb(229 231 235);
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.25;
+    border-radius: 0.25rem;
+}
+#plannned_workout_reps:focus{
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    background-color: #ffffff;
+    border-color: rgb(249 250 251);
+    border-radius: 0.25rem;
+}
+#plannned_workout_sets:focus{
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    background-color: #ffffff;
+    border-color: rgb(249 250 251);
+    border-radius: 0.25rem;
+}
