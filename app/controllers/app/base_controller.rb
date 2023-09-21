@@ -6,13 +6,6 @@ class App::BaseController < ApplicationController
     
     FILTER_OPTIONS = Exercise.distinct.pluck(:body_part).freeze
 
-    def check_current_user
-      return unless current_user
-      
-      flash[:alert] = "You have to be logged in first"
-      redirect_to new_user_session_url
-    end
-
     def apply_filter(filter_option)
       case filter_option
       when *FILTER_OPTIONS

@@ -1,5 +1,4 @@
 class App::TrainingController < App::BaseController
-  before_action :check_current_user, only: [:create]
  # Renders new page for training creation, the @freestyle_exercise variable is here cause we need to display it's gif and name in the views
   def new
     @freestyle_exercise = Exercise.find(params[:exercise])

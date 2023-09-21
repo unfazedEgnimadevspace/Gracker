@@ -1,5 +1,4 @@
 class App::PlannedWorkoutsController < App::BaseController
-  before_action :check_current_user
   before_action :set_planned_workout, only: [:edit, :update, :show, :destroy]
   before_action :get_exercise_object, only: [:edit, :update, :show, :destroy]
 

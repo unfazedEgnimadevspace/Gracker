@@ -1,5 +1,4 @@
 class App::FoodsController < App::BaseController
-  before_action :check_current_user
   before_action :set_food, only: [:show, :edit, :update, :destroy]
   def index
     @foods = current_user.foods.paginate(page: params[:page], per_page: 10)
