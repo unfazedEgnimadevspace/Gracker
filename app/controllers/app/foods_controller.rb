@@ -1,4 +1,4 @@
-class App::FoodsController < ApplicationController
+class App::FoodsController < App::BaseController
   before_action :check_current_user
   before_action :set_food, only: [:show, :edit, :update, :destroy]
   def index
@@ -41,15 +41,7 @@ class App::FoodsController < ApplicationController
   end
 
 
-
   private 
-
-  def check_current_user
-    if current_user == nil  
-      flash[:alert] = "You have to be logged in first"
-      redirect_to new_user_session_url
-    end 
-  end
   
   def set_food 
     @food = current_user.foods.find(params[:id])
