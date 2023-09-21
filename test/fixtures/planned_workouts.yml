@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2023-07-24
+  completed: false
+  user_id: 1
+  exercise_id: 1
+  description: MyText
+  hours: 1
+  minutes: 1
+  duration: 1
+
+two:
+  date: 2023-07-24
+  completed: false
+  user_id: 1
+  exercise_id: 1
+  description: MyText
+  hours: 1
+  minutes: 1
+  duration: 1
