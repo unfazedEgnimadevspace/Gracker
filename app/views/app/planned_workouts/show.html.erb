@@ -1,0 +1,43 @@
+<section class="mx-6 md:mx-8 lg:mx-12 pt-3 mb-20 mt-4 mb-7">
+  <h3 class="text-2xl font-medium text-center text-indigo-400 mb-8 mt-4"> Planned workout <%= @planned_workout.id%></h3>
+ <div class="max-w-lg bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 px-3 py-3 mx-auto">  
+    <div class="rounded-xl">
+      <div class="flex flex-col p-4 rounded-xl bg-white">
+          <div class="flex align-center justify-between mt-2 p-1">
+            <span class="font-light text-medium">Exercise: </span>
+            <span class="font-light text-sm"><%= @exercise_object.name.capitalize %></span>
+          </div>
+          <div class="flex align-center justify-between mt-2 p-1">
+            <span class="font-light text-sm">Date</span>
+            <span class="font-light text-sm"><%= @planned_workout.date %></span>
+          </div>
+          <div class="flex align-center justify-between mt-2 p-1">
+            <span class="font-light text-sm">Completed</span>
+            <span class="font-light text-sm capitalize"><%= @planned_workout.completed %></span>
+          </div>
+          <div class="flex align-center justify-between mt-2 p-1">
+            <span class="font-light text-base">Duration:</span>
+            <span class="font-light text-sm"><%= @planned_workout.duration %> minutes</span>
+          </div>
+          <div class="flex align-center justify-between mt-2 p-1">
+            <span class="font-light text-base">Sets:</span>
+            <span class="font-light text-sm"><%= @planned_workout.sets %></span>
+          </div>
+          <div class="flex align-center justify-between mt-2 p-1">
+            <span class="font-light text-base">Reps:</span>
+            <span class="font-light text-sm"><%= @planned_workout.reps %></span>
+          </div>
+          <div class="flex flex-col align-center justify-between mt-2 p-1 mx-auto">
+            <u class="font-light text-base text-center mb-4">Description</u>
+            <p class="text-center font-light text-base "><%=@planned_workout.description %></p>
+          </div>
+          
+          <div class="flex justify-between align-center mt-12">
+            <%= link_to "Back", app_planned_workouts_url, class: "text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-4 py-2 mr-2 mb-2"%>
+            <%= link_to  "Update", edit_app_planned_workout_path(@planned_workout), class: "text-gray-900 bg-white border border-gray-300 hover:border-blue-300 focus:outline-none hover:bg-blue-800 hover:text-white focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-4 py-2 mr-2 mb-2 duration-100" %>
+            <%= link_to  "Delete", app_planned_workout_path(@planned_workout), data:{"turbo_method": :delete, turbo_confirm: "Are you sure"}, class: "text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-red-800 focus:ring-4 hover:text-white font-medium rounded-lg text-sm px-4 py-2 mr-2 mb-2 duration-100" %>
+          </div>
+      </div>
+    </div> 
+  </div>
+</section>
