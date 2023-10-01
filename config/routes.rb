@@ -19,5 +19,8 @@ Rails.application.routes.draw do
     get '/plan_workouts_filter', to: "planned_workouts#filter_exercise"
     get '/freestyle_training_filter', to: "freestyle#filter_exercise"
   end
-  get '*path', to: 'errors#not_found', via: :all
+  get '*path', to: 'errors#not_found', via: :all, constraints: lambda { |req|
+    !req.path.starts_with?('/rails/active_storage')
+  }
+  
 end

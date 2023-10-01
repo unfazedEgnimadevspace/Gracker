@@ -1,43 +1,68 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<%provide(:title, "Edit user")%>
+<section class="bg-white dark:bg-gray-900 mx-3 md:mx-0">
+  <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-lg">
+      <h2 class="mb-4 text-3xl tracking-tight font-medium text-center text-gray-500 dark:text-white">Edit account</h2>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }, class: "space-y-8") do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+        <div class="mt-10">
+          <div class="align-center">
+            <div class="">
+              <% if resource.avatar.attached? %>
+                <%= image_tag resource.avatar, class: "rounded w-42 h-36 mx-auto", alt: resource.first_name %>
+              <% else %>
+                <%= gravatar_for(current_user, "roundedw-42 h-36 mx-auto") %>
+              <% end %>  
+            </div>
+          </div> 
+          <div class="mt-5">
+              <%= f.file_field :avatar , class: "" %>
+          </div>
+        </div> 
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+        <div class="flex w-full justify-between align-center gap-3 mt-5">
+          <div class="w-full">
+            <%= f.label :first_name, class: 'block mb-2 text-sm font-medium text-gray-900'%>
+            <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class: 'block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500', placeholder: "John"%>
+          </div>
+           <div class="w-full">
+            <%= f.label :last_name, class: 'block mb-2 text-sm font-medium text-gray-900'%>
+            <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", class: 'block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500', placeholder: "Doe"%>
+          </div>
+        </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        <div class="flex w-full justify-between align-center gap-3 mt-5">
+          <div class="w-full">
+            <%= f.label :email, class: 'block mb-2 text-sm font-medium text-gray-900 '%>
+            <%= f.email_field :email, autofocus: true , autocomplete: "email", class: 'block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500'%>
+          </div>
+
+           <div class="w-full">
+            <%= f.label :current_password, class: 'block mb-2 text-sm font-medium text-gray-900'%>
+            <%= f.password_field :current_password, autofocus: true, autocomplete: "current-password", class: "block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500"%>
+          </div>
+        </div> 
+
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+        <% end %>
+
+        <div class="flex w-full justify-between align-center gap-3 mt-5">
+          <div class="w-full">
+            <%= f.label :password, class: 'block mb-2 text-sm font-medium text-gray-900'%> 
+            <%= f.password_field :password, autofocus: true, autocomplete: "new-password", class: "block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500"%>
+          </div>
+          
+          <div class="w-full">
+            <%= f.label :password_confrmation, class: 'block mb-2 text-sm font-medium text-gray-900'%>
+            <%= f.password_field :password_confrmation, autofocus: true, autocomplete: "new-password", class: "block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500"%>
+          </div>
+          
+        </div>   
+        <i class="text-base text-indigo-500">(leave blank if you don't want to change it)</i> <br>
+         <%= f.submit "Update", class: " mt-5 text-white bg-indigo-600 hover:bg-indigo-700 focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800 cursor-pointer align-right"%>
+      <% end %>
+      <div class="mt-10">Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %></div>
+      <%= link_to "Back", :back %>
   </div>
+</section>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<div>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %></div>
-
-<%= link_to "Back", :back %>

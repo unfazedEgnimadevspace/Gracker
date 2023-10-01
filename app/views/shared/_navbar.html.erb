@@ -8,7 +8,11 @@
       <div class="flex items-center md:order-2">
           <button type="button" class="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
             <span class="sr-only">Open user menu</span>
-            <img class="w-8 h-8 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/karen-nelson.png" alt="user photo">
+            <% if current_user.avatar.attached? %>
+              <%= image_tag(current_user.avatar, class: "w-10 h-10 rounded-full", alt: current_user.first_name)%>
+            <% else %>  
+              <%= gravatar_for(current_user, "w-10 h-10 rounded-full") %>
+            <% end %>  
           </button>
           <!-- Dropdown menu -->
           <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600" id="user-dropdown">

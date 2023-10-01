@@ -1,5 +1,23 @@
 <section class="mx-2 md:mx-4 lg:mx-6 pt-3">
-    <p class="text-2xl font-bold text-center text-indigo-400 mb-8 mt-[3rem] sm:mt-[5rem]">Your meals and training statics this week</p>
+    <div class="w-full flex align-center justify-between my-5 px-4 md:px-4 lg:px-6">
+      <h4 class="text-md lg:text-xl font-medium mt-2  text-blue-600">Welcome <%= current_user.first_name.humanize %></h4>
+      <div>
+        
+        <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-white bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-[0.35rem] lg:py-2  text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mt-2" type="button">Settings <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+          </svg>
+        </button>
+
+        <!-- Dropdown menu -->
+        <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+              <li>
+                <%= link_to  "Edit account", edit_user_registration_path, class: "block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" %>
+              </li>
+        </div>
+      </div>
+    </div>
+   
     <div class="sm:m-10 m-5 grid gap-7 sm:grid-cols-3  max-w-screen-xl ">
       <div class="px-4 py-6 shadow-lg shadow-blue-100">
         
