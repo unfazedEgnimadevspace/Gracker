@@ -8,9 +8,9 @@
           <div class="align-center">
             <div class="">
               <% if resource.avatar.attached? %>
-                <%= image_tag resource.avatar, class: "rounded w-42 h-36 mx-auto", alt: resource.first_name %>
+                <%= image_tag resource.avatar, class: "rounded w-52 h-42 mx-auto", alt: resource.first_name %>
               <% else %>
-                <%= gravatar_for(current_user, "roundedw-42 h-36 mx-auto") %>
+                <%= gravatar_for(current_user, "rounded w-52 h-42 mx-auto") %>
               <% end %>  
             </div>
           </div> 
