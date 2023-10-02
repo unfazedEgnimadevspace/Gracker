@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Workout Reminder</title>
+</head>
+<body>
+  <h1>Workout Reminder</h1>
+
+  <p>Hello <%= @user.first_name %>,</p>
+
+  <p>This is a reminder for your upcoming workout today:</p>
+
+  <ul>
+    <li><strong>Workout Name:</strong> <%= @planned_workout_exercise.name %></li>
+    <li><strong>Workout Description:</strong> <%= @planned_workout.description %></li>
+    <li><strong>Workout Duration:</strong> <%= @planned_workout.duration %></li>
+    <li><strong>Workout Date:</strong> <%= @planned_workout.date.strftime('%A, %B %d, %Y') %></li>
+    <li><strong>Numbers of sets:</strong> <%= @planned_workout.sets %></li>
+    <li><strong>Numbers of reps:</strong> <%= @planned_workout.reps %></li>
+  </ul>
+
+  <p>Don't forget to stay active and healthy!</p>
+
+  <p>Regards,<br>Gracker</p>
+</body>
+</html>

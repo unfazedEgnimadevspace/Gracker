@@ -16,8 +16,9 @@ class App::PlannedWorkoutsController < App::BaseController
 
   def create
     @planned_workout = current_user.planned_workouts.build(planned_workouts_params)
-    if @planned_workout.save 
-      flash[:notice] = "Workout planned sucessfully"
+    if @planned_workout.save
+      PlannedWorkoutsMailerJob.perform_at(@planned_workout.date.to_time.to_i, current_user.id, @planned_workout.id) 
+      flash[:notice] = "Workout planned sucessfully you will be sent a mail on #{@planned_workout.date} to remind you"
       redirect_to app_planned_workout_path(@planned_workout)
     else
       render :new
