@@ -9,7 +9,7 @@ class Dashboard
     def initialize_queries 
         @food_query = @user.foods.where(consumed_at: @start_time..@end_time)
         @training_query = @user.trainings.where(exercise_time: @start_time..@end_time)
-        @planned_workouts_query = @user.planned_workouts.where(date: @start_time..@end_time)
+        @planned_workouts_query = @user.planned_workouts.where(created_at: @start_time..@end_time)
     end
 
     def total_meals

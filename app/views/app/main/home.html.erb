@@ -35,7 +35,7 @@
         <p class="mt-4 font-medium">Meals</p>
         <div class="flex justify-between">
           <p class="mt-2 text-xl font-medium">
-            <%= @total_meals %>
+            <%= @dashboard.total_meals %>
           </p>
            <%= link_to  "New", new_app_food_path, class:"text-white bg-blue-300 hover:bg-blue-400 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-3 py-2 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700" %>
         </div>
@@ -48,7 +48,7 @@
         <p class="mt-4 font-medium">Calories</p>
         <div class="flex justify-between">
           <p class="mt-2 text-xl font-medium">
-            <%= @total_calories %>
+            <%= @dashboard.total_calories %>
           </p>
         </div>
       </div>
@@ -62,7 +62,7 @@
         </svg>
         <p class="mt-4 font-medium">Planned Workouts</p>
         <p class="mt-2 text-xl font-medium">
-          0
+          <%= @dashboard.planned_workouts %>
         </p>
       </div>
     </div>
@@ -81,7 +81,7 @@
         <p class="mt-4 font-medium">Exercises</p>
         <div class="flex justify-between">
           <p class="mt-2 text-xl font-medium">
-            <%= @number_of_exercises_performed %>
+            <%= @dashboard.number_of_exercises_performed %>
           </p>
         </div>  
       </div>
@@ -98,7 +98,7 @@
         <p class="mt-4 font-medium">Sets</p>
         <div class="flex justify-between">
           <p class="mt-2 text-xl font-medium">
-            <%= @number_of_sets_performed %>
+            <%= @dashboard.number_of_sets_performed %>
           </p>
         </div>
       </div>
@@ -110,7 +110,7 @@
         <p class="mt-4 font-medium">Reps</p>
         <div class="flex justify-between">
           <p class="mt-2 text-xl font-medium">
-            <%= @number_of_reps_performed %>
+            <%= @dashboard.number_of_reps_performed %>
           </p>
         </div>
       </div>
