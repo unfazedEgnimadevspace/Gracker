@@ -82,4 +82,6 @@ gem "devise", "~> 4.9"
 gem "will_paginate", "~> 3.3"
 gem "chartkick", "~> 5.0"
 gem "groupdate", "~> 6.3"
+gem 'figaro'
 gem 'image_processing'
+gem 'sidekiq'

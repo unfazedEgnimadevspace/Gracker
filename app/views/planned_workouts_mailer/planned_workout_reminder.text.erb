@@ -1,0 +1,18 @@
+Workout Reminder
+=================
+
+Hello <%= @user.first_name %>,
+
+This is a reminder for your upcoming workout today:
+
+Workout Name: <%= @planned_workout_exercise.name %>
+Workout Description: <%= @planned_workout.description %>
+Workout Duration: <%= @planned_workout.duration %>
+Workout Date: <%= @planned_workout.date.strftime('%A, %B %d, %Y') %>
+Number of sets: <%= @planned_workout.sets %>
+Number of reps: <%= @planned_workout.reps %>
+
+Don't forget to stay active and healthy!
+
+Regards,
+Gracker
