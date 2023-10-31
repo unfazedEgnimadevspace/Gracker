@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'website/pages#show', page: "home"
-  devise_for :users
+  devise_for :users, controllers: {
+    omniauth_callbacks: 'omniauth_callbacks'
+  }
 
   # Namespace for pages that do not require authentication
   namespace :website do 

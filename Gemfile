@@ -85,3 +85,5 @@ gem "groupdate", "~> 6.3"
 gem 'figaro'
 gem 'image_processing'
 gem 'sidekiq'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-rails_csrf_protection'
